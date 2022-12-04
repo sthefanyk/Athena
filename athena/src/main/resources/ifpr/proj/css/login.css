@@ -1,0 +1,61 @@
+.tela{
+    -fx-background-color: #FFFBFE;
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 720px;
+}
+
+.areaLogin{
+    -fx-pref-width: 500px;
+    -fx-pref-height: 720px;
+    -fx-alignment: center-top;
+    -fx-padding: 60 50 60 50;
+    -fx-spacing: 16px;
+}
+
+.img{
+    -fx-pref-width: 780px;
+    -fx-pref-height: 740px;
+}
+
+.pane{
+    -fx-pref-width: 320px;
+    -fx-pref-height: 55px;
+}
+
+.login{
+    -fx-background-color: #F7F2FA;
+    -fx-pref-width: 400px;
+    -fx-pref-height: 490px;
+    -fx-alignment: center-top;
+    -fx-spacing: 32px;
+    -fx-padding: 16 40.5 16 40.5;
+    -fx-background-radius: 10;
+}
+
+.label{
+    -fx-pref-width: 400px;
+    -fx-pref-height: 55px;
+    -fx-alignment: center;
+}
+
+.disg{
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 55px;
+    -fx-alignment: center-left;
+    -fx-padding: 10px;
+    -fx-spacing: 8px;
+}
+
+.tf{
+    -fx-pref-width: 300px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #ffffff;
+}
+
+.entrar{
+    -fx-background-color: #76B62A;
+    -fx-pref-width: 319px;
+    -fx-pref-height: 55px;
+    -fx-alignment: center;
+}

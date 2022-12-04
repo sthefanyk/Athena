@@ -1,0 +1,17 @@
+.centro{
+    -fx-background-color: #99F2FA;
+    -fx-pref-width: 1020px;
+    -fx-pref-height: 664px;
+    -fx-padding: 20 20 20 0;
+}
+
+.centro2{
+    -fx-pref-width: 1020px;
+    -fx-pref-height: 620px;
+    -fx-background-color: #F7F2FA;
+    -fx-background-radius: 0 16 16 0;
+
+    -fx-alignment: top-left;
+    -fx-padding: 16;
+    -fx-spacing: 8px;
+}

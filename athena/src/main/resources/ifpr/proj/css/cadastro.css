@@ -1,0 +1,8 @@
+.area{
+    -fx-pref-height: 460px;
+}
+
+.label{
+    -fx-pref-width: 1000px;
+    -fx-pref-height: 56px;
+}

@@ -1,0 +1,42 @@
+.border-top{
+    -fx-background-color: #ffffff;
+    -fx-padding: 8 16 8 16;
+    -fx-pref-height: 56px;
+}
+
+.botao{
+    -fx-background-color: #E8DEF8;
+    -fx-background-radius: 12;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+}
+
+.perfil{
+    -fx-background-color: #ffffff;
+    -fx-alignment: center-left;
+}
+
+.pesquisa{
+    -fx-background-color: #EEE8F4;
+    -fx-background-radius: 10;
+    -fx-pref-width: 350px;
+    -fx-pref-height: 40px;
+}
+
+.pane{
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+}
+
+.panee{
+    -fx-pref-width: 350px;
+    -fx-pref-height: 40px;
+}
+
+.tela{
+    -fx-background-color: #85AA7F;
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 720px;
+}
+
+

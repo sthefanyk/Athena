@@ -1,0 +1,11 @@
+.full{
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 720px;
+    -fx-background-color: #85AA7F;
+}
+
+.top{
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 56px;
+    -fx-background-color: #FFFFFF;
+}

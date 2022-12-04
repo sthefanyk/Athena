@@ -1,0 +1,129 @@
+.border-center{
+    -fx-background-color: #85AA7F;
+    -fx-pref-width: 1280px;
+    -fx-pref-height: 664px;
+    -fx-padding: 16;
+}
+
+.tela{
+    -fx-background-color: #F7F2FA;
+    -fx-background-radius: 16;
+    -fx-pref-width: 1248px;
+    -fx-pref-height: 632px;
+}
+
+.left{
+    -fx-padding: 16 0 16 16;
+    -fx-pref-width: 260px;
+}
+
+.center{
+    -fx-padding: 16 16 16 0;
+    -fx-pref-width: 250px;
+}
+
+.center-tam{
+    -fx-pref-width: 998px;
+    -fx-pref-height: 662px;
+}
+
+.sideBar{
+    -fx-pref-width: 250px;
+    -fx-pref-height: 632px;
+    -fx-background-color: #F7F2FA;
+    -fx-background-radius: 16 0 0 16;
+    
+    -fx-alignment: top-center;
+    -fx-padding: 24 16 24 16;
+    -fx-spacing: 8px;
+}
+
+.centro{
+    -fx-pref-width: 250px;
+    -fx-pref-height: 632px;
+    -fx-background-color: #F7F2FA;
+    -fx-background-radius: 0 16 16 0;
+
+    -fx-alignment: top-left;
+    -fx-padding: 16;
+    -fx-spacing: 8px;
+}
+
+.user{
+    -fx-pref-width: 80px;
+    -fx-pref-height: 80px;
+}
+
+.username{
+
+}
+
+.pane{
+    -fx-pref-height: 20px;
+}
+
+
+
+.title{
+    -fx-pref-width: 1020px;
+    -fx-pref-height: 56px;
+}
+
+.button{
+    -fx-background-color: #F7F2FA;
+    -fx-pref-width: 168px;
+    -fx-pref-height: 56px;
+    -fx-border-color:#B8B9BB;
+     -fx-border-radius: 10;
+}
+
+.divisao{
+    -fx-pref-width: 900px;
+    -fx-pref-height: 1px;
+    -fx-border-color:#B8B9BB;
+}
+
+.config{
+    -fx-pref-width: 999px;
+    -fx-pref-height: 72px;
+    -fx-alignment: center-right;
+    -fx-padding: 16 0 16 0;
+    -fx-spacing: 8px;
+}
+
+.filtro{
+    -fx-background-color: #F7F2FA;
+    -fx-pref-height: 40px;
+    -fx-border-color:#000000;
+    -fx-border-radius: 5;
+}
+
+.pane2{
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+}
+
+.add{
+    -fx-background-color: #F7F2FA;
+    -fx-pref-width: 110px;
+    -fx-pref-height: 40px;
+    -fx-border-color:#000000;
+    -fx-border-radius: 5;
+}
+
+.table{
+    -fx-pref-width: 40px;
+    -fx-pref-height: 450px;
+}
+
+.a{
+    -fx-pref-width: 1020px;
+    -fx-pref-height: 624px;
+
+    -fx-alignment: top-center;
+    -fx-padding: 8;
+    -fx-spacing: 8px;
+}
+
+
+

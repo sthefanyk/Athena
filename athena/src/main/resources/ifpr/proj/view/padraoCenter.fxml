@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="border-center" stylesheets="@../css/admin.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="tela" stylesheets="@../css/admin.css">
+         <children>
+              <VBox prefHeight="200.0" prefWidth="100.0" styleClass="sideBar" stylesheets="@../css/admin.css" BorderPane.alignment="CENTER">
+                  <children>
+                      <ImageView pickOnBounds="true" preserveRatio="true">
+                      <image>
+                     <Image url="@../img/userr.png" />
+                      </image>
+                      </ImageView>
+                      <Label text="ADMIN" />
+                      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="pane" stylesheets="@../css/admin.css" />
+                      <Button mnemonicParsing="false" onAction="#usuario" text="Usuários" />
+                      <Button mnemonicParsing="false" text="Cursos" />
+                      <Button mnemonicParsing="false" text="Disciplinas" />
+                      <Button mnemonicParsing="false" text="Turmas" />
+                      <Button mnemonicParsing="false" text="Fóruns" />
+                      <Button mnemonicParsing="false" text="Grupos" />
+                  </children>
+              </VBox>
+              <VBox maxHeight="624.0" maxWidth="1020.0" prefHeight="624.0" prefWidth="1020.0" styleClass="a" stylesheets="@../css/admin.css">
+                     <children>
+                        <Label minHeight="56.0" minWidth="1020.0" styleClass="title" stylesheets="@../css/admin.css" text="Label" />
+                        <Pane maxHeight="1.0" maxWidth="900.0" styleClass="divisao" stylesheets="@../css/admin.css" />
+                     </children>
+                  </VBox>
+         </children>
+   </HBox>
+</VBox>
