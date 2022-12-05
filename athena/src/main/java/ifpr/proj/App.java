@@ -5,7 +5,6 @@ import ifpr.proj.controllers.LoginController;
 import ifpr.proj.controllers.AdminController;
 import ifpr.proj.controllers.CadUsuarioController;
 import ifpr.proj.controllers.CrudUsuarioController;
-import ifpr.proj.controllers.PostController;
 import ifpr.proj.utils.Navigator.BaseAppNavigator;
 import ifpr.proj.utils.Navigator.ScreenRegistryFXML;
 
