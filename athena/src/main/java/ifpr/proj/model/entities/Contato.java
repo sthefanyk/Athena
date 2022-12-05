@@ -5,6 +5,10 @@ public class Contato {
     private Email email;
     private Telefone Telefone;
     
+
+    public Contato() {
+    }
+    
     public Contato(int contatoID, Email email, Telefone telefone) {
         this.contatoID = contatoID;
         this.email = email;

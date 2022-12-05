@@ -2,6 +2,8 @@ package ifpr.proj.model.daos;
 
 import java.util.List;
 
+import ifpr.proj.model.entities.Cidade;
+import ifpr.proj.model.entities.Estado;
 import ifpr.proj.model.entities.Pessoa;
 import ifpr.proj.model.results.Result;
 
@@ -11,4 +13,6 @@ public interface PessoaDAO {
     List<Pessoa> listAll();
     Pessoa getById(int id);
     Result delete(int id);
+    List<Estado> listAllEstados();
+    List<Cidade> listAllCidades();
 }

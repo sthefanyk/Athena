@@ -1,83 +1,126 @@
 package ifpr.proj.controllers;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import ifpr.proj.App;
 import ifpr.proj.controllers.ViewModels.CadUsuarioViewModel;
 import ifpr.proj.model.entities.Cidade;
+import ifpr.proj.model.entities.Contato;
+import ifpr.proj.model.entities.CorRaca;
+import ifpr.proj.model.entities.Email;
+import ifpr.proj.model.entities.Endereco;
 import ifpr.proj.model.entities.Estado;
-import ifpr.proj.model.entities.Pais;
+import ifpr.proj.model.entities.Nivel;
+import ifpr.proj.model.entities.Pessoa;
+import ifpr.proj.model.entities.Rg;
+import ifpr.proj.model.entities.Sexo;
+import ifpr.proj.model.entities.Telefone;
+import ifpr.proj.model.results.Result;
 import ifpr.proj.utils.Navigator.BorderPaneRegion;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextField;
 
-public class CadUsuarioController {
+public class CadUsuarioController extends BaseController implements Initializable{
 
     @FXML
-    private TextField tfNomeCompl;
+    private MFXTextField tfNomeCompl;
 
     @FXML
     private MFXDatePicker dpData;
 
     @FXML
-    private TextField tfNaturalidade;
-
-    /*@FXML
-    private MFXComboBox<Str> cbUF;*/
+    private MFXComboBox<Cidade> cbNaturalidade;
 
     @FXML
-    private TextField tfNomeMae;
+    private MFXComboBox<Estado> cbNaturalidadeUF;
 
     @FXML
-    private TextField tfNomePai;
+    private MFXTextField tfNomeMae;
+
+    @FXML
+    private MFXTextField tfNomePai;
+
+    @FXML
+    private MFXComboBox<Sexo> cbSexo;
+
+    @FXML
+    private MFXComboBox<CorRaca> cbCorRaca;
 
     @FXML
     private MFXCheckbox chbDef;
 
     @FXML
-    private MFXComboBox<String> cbTipo;
+    private MFXTextField tfCep;
 
-    private ObservableList<String> tipos = FXCollections.observableArrayList();
-    private ObservableList<String> estados = FXCollections.observableArrayList();
+    @FXML
+    private MFXComboBox<Estado> cbUF;
+
+    @FXML
+    private MFXComboBox<Cidade> cbMunicipio;
+
+    @FXML
+    private MFXTextField tfLogradouro;
+
+    @FXML
+    private MFXTextField tfBairro;
+
+    @FXML
+    private MFXTextField tfNumero;
+
+    @FXML
+    private MFXTextField tfComplemento;
+
+    @FXML
+    private MFXTextField tfCpf;
+
+    @FXML
+    private MFXTextField tfRg;
+
+    @FXML
+    private MFXTextField tfRgExp;
+
+    @FXML
+    private MFXComboBox<Estado> cbRgUF;
+
+    @FXML
+    private MFXTextField tfOrgao;
+
+    @FXML
+    private MFXTextField tfEmail;
+
+    @FXML
+    private MFXTextField tfTelefone;
+
+    @FXML
+    private MFXComboBox<Nivel> cbTipo;
 
     private CadUsuarioViewModel viewModel;
-
 
     public CadUsuarioController(CadUsuarioViewModel viewModel){
         this.viewModel = viewModel;
     }
 
-    @FXML
-    private void initialize(){
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        // TODO Auto-generated method stub
+        this.cbNaturalidade.setItems(viewModel.getCidades());
+        this.cbNaturalidadeUF.setItems(viewModel.getEstados());
+        this.cbSexo.setItems(viewModel.getSexos());
+        this.cbUF.setItems(viewModel.getEstados());
+        this.cbMunicipio.setItems(viewModel.getCidades());
+        this.cbRgUF.setItems(viewModel.getEstados());
+        this.cbCorRaca.setItems(viewModel.getCorRacas());
+        this.cbTipo.setItems(viewModel.getNivels());
 
-        Pais pais = new Pais(0, "Brasil");
-        Pais pais2 = new Pais(0, "Argentina");
-        Pais pais3 = new Pais(0, "Alemanha");
-        Estado estado = new Estado(0, "Parana", pais3);
-        Estado estado2 = new Estado(0, "Minas Gerais", pais3);
-        Estado estado3 = new Estado(0, "São Paulo", pais3);
-        Cidade cidade = new Cidade(0, "Curitiba", estado);
-        Cidade cidade1 = new Cidade(0, "Paranagua", estado);
-        Cidade cidade2 = new Cidade(0, "São Paulo", estado3);
-
-        estados.setAll(estado.getNome(), estado2.getNome(), estado3.getNome());
-
-        //this.cbUF.setItems(estados);
-        
-        tipos.setAll("Aluno", "Professor", "Coordenação");
-
-        this.cbTipo.setItems(tipos);
+        tfNomeCompl.textProperty().bindBidirectional(view.);
     }
-
-
-
 
     @FXML
     private void usuario(){
@@ -86,7 +129,11 @@ public class CadUsuarioController {
 
     @FXML
     private void cadastrar(){
-        viewModel.cadastrar();
+        Result resultado = viewModel.cadastrar();
+        showMessage(resultado);
     }
+
+
+    
 
 }

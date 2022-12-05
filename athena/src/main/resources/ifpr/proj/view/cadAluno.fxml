@@ -85,7 +85,7 @@
                                     <HBox>
                                         <MFXTextField fx:id="tfRgExp" prefHeight="51.0" prefWidth="371.0" floatingText="RG Data de Expedição" />
                                         <MFXComboBox fx:id="cbRgUF" prefHeight="51.0" prefWidth="371.0" floatingText="RG UF" />
-                                        <MFXComboBox fx:id="cbOrgao" prefHeight="51.0" prefWidth="371.0" floatingText="RG Órgão (Ex: SSP, IIPR ou PC)" />
+                                        <MFXTextField fx:id="tfOrgao" prefHeight="51.0" prefWidth="371.0" floatingText="RG Órgão (Ex: SSP, IIPR ou PC)" />
                                     </HBox>
                                     
 
@@ -94,7 +94,6 @@
                                     <HBox>
                                         <MFXTextField fx:id="tfEmail" prefHeight="51.0" prefWidth="371.0" floatingText="E-mail" />
                                         <MFXTextField fx:id="tfTelefone" prefHeight="51.0" prefWidth="371.0" floatingText="Telefone/Celular" />
-                                        <MFXTextField fx:id="tfTelefoneS" prefHeight="51.0" prefWidth="371.0" floatingText="Telefone/Celular secundário" />
                                     </HBox>
                                     
                                     <Label minHeight="56.0" minWidth="927.0" prefWidth="990.0" stylesheets="@../css/cadastro.css" text="Tipo" />

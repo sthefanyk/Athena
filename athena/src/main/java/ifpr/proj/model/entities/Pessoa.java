@@ -12,6 +12,9 @@ public class Pessoa {
     private Rg rg;
     private Contato contato;
     private Endereco endereco;
+
+    public Pessoa(){        
+    }
     
     public Pessoa(String cpf, String primeiroNome, String ultimoNome, Sexo sexo, CorRaca corRaca,
             boolean possuiNecessidadesEspecificas, Rg rg, Contato contato, Endereco endereco) {

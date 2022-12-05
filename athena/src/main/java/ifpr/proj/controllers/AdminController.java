@@ -11,6 +11,4 @@ public class AdminController{
         App.changeScreenRegion("CRUD_USUARIO", BorderPaneRegion.CENTER);
     }
 
-    
-
 }

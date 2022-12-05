@@ -1,3 +1,14 @@
+DROP TABLE athena_usuario;
+DROP TABLE athena_pessoa;
+DROP TABLE athena_rg;
+DROP TABLE athena_endereco;
+DROP TABLE athena_cidade;
+DROP TABLE athena_estado;
+DROP TABLE athena_pais;
+DROP TABLE athena_contato;
+DROP TABLE athena_email;
+DROP TABLE athena_telefone;
+
 CREATE TABLE IF NOT EXISTS athena_telefone(
     telefoneID INT PRIMARY KEY AUTO_INCREMENT, 
     telefone TEXT NOT NULL
@@ -130,5 +141,33 @@ DELIMITER $$
 DELIMITER ;
 
 CALL getPessoa();
+
+DELIMITER $$
+    DROP PROCEDURE IF EXISTS getEstado $$
+    CREATE PROCEDURE getEstado()
+    BEGIN
+        SELECT es.estadoID AS estadoID, es.estado AS estado,
+        pa.paisID AS paisID, pa.pais AS pais
+        FROM athena_estado AS es
+        JOIN athena_pais AS pa USING(paisID);
+    END $$
+DELIMITER ;
+
+CALL getEstado();
+
+DELIMITER $$
+    DROP PROCEDURE IF EXISTS getCidade $$
+    CREATE PROCEDURE getCidade()
+    BEGIN
+        SELECT c.cidadeID AS cidadeID, c.cidade AS cidade,
+        es.estadoID AS estadoID, es.estado AS estado,
+        pa.paisID AS paisID, pa.pais AS pais
+        FROM athena_cidade AS c
+        JOIN athena_estado AS es USING(estadoID)
+        JOIN athena_pais AS pa USING(paisID);
+    END $$
+DELIMITER ;
+
+CALL getCidade();
 
 

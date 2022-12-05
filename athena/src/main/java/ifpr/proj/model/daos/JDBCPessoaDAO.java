@@ -4,11 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import ifpr.proj.model.FabricaConexoes;
@@ -28,9 +26,13 @@ import ifpr.proj.model.results.Result;
 public class JDBCPessoaDAO implements PessoaDAO{
 
     private static final String INSERT = "INSERT INTO athena_pessoa(cpf,primeiroNome,ultimoNome,sexo,corRaca,possuiNecessidadesEspecificas,contatoID,enderecoID,rgID) VALUES (?,?,?,?,?,?,?,?,?,?)";
-    private static final String UPDATE = "UPDATE produtos set nome=?, descricao=?, valor=?, quantidadeEstoque=? WHERE id=?";
+    private static final String INSERT_TELEFONE = "INSERT INTO athena_telefone(telefone) VALUES (?)";
+    private static final String INSERT_EMAIL = "INSERT INTO athena_email(email) VALUES (?)";
+    //private static final String UPDATE = "UPDATE produtos set nome=?, descricao=?, valor=?, quantidadeEstoque=? WHERE id=?";
     private static final String SELECT_ALL = "CALL getPessoa()";
-    private static final String SELECT_ID = "SELECT * FROM produtos WHERE id=?";
+    private static final String SELECT_ALL_ESTADOS = "CALL getEstado()";
+    private static final String SELECT_ALL_CIDADES = "CALL getCidade()";
+    //private static final String SELECT_ID = "SELECT * FROM produtos WHERE id=?";
 
     private FabricaConexoes fabricaConexoes;
 
@@ -206,6 +208,88 @@ public class JDBCPessoaDAO implements PessoaDAO{
         else pessoa.setCorRaca(CorRaca.INDIGENA);
 
         return pessoa;
+    }
+
+    @Override
+    public List<Estado> listAllEstados() {
+        ArrayList<Estado> estados = new ArrayList<>();
+        try{
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement(SELECT_ALL_ESTADOS);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                Estado estado = buildFromEstados(rs);
+                estados.add(estado);
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+            return estados;
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    private Estado buildFromEstados(ResultSet result) throws SQLException{
+        int estadoID = result.getInt("estadoID");
+        String estadoo = result.getString("estado");
+        int paisID = result.getInt("paisID");
+        String paiss = result.getString("pais");
+
+        Pais pais = new Pais(paisID, paiss);
+        Estado estado = new Estado(estadoID, estadoo, pais);
+
+        return estado;
+
+    }
+
+    @Override
+    public List<Cidade> listAllCidades() {
+        ArrayList<Cidade> cidades = new ArrayList<>();
+        try{
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement(SELECT_ALL_CIDADES);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                Cidade cidade = buildFromCidades(rs);
+                cidades.add(cidade);
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+            return cidades;
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    private Cidade buildFromCidades(ResultSet result) throws SQLException{
+        int cidadeID = result.getInt("cidadeID");
+        String cidadee = result.getString("cidade");
+        int estadoID = result.getInt("estadoID");
+        String estadoo = result.getString("estado");
+        int paisID = result.getInt("paisID");
+        String paiss = result.getString("pais");
+
+        Pais pais = new Pais(paisID, paiss);
+        Estado estado = new Estado(estadoID, estadoo, pais);
+        Cidade cidade = new Cidade(cidadeID, cidadee, estado);
+
+        return cidade;
     }
     
 }

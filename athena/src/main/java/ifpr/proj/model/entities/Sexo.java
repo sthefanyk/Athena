@@ -19,4 +19,9 @@ public enum Sexo {
     public String getSexo() {
         return sexo;
     }
+
+    @Override
+    public String toString() {
+        return this.sexo;
+    }
 }

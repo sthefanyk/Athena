@@ -5,6 +5,8 @@ public class Telefone {
     private int telefoneID;
     private String telefone;
     
+    public Telefone() {
+    }
     public Telefone(int telefoneID, String telefone) {
         this.telefoneID = telefoneID;
         this.telefone = telefone;

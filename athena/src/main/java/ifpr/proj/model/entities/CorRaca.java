@@ -23,4 +23,9 @@ public enum CorRaca {
         return corRaca;
     }
 
+    @Override
+    public String toString() {
+        return this.corRaca;
+    }
+
 }

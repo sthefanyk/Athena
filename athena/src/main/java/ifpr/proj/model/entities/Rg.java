@@ -12,6 +12,9 @@ public class Rg {
     private String nomePai;
     private Cidade naturalidade;
     private Estado uf;
+
+    public Rg(){        
+    }
     
     public Rg(int rgID, String rg, String nome, LocalDate dataExpedicao, String orgaoExpedidor, String nomeMae,
             String nomePai, Cidade naturalidade, Estado uf) {

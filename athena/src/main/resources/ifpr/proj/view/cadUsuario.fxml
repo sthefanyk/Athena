@@ -47,7 +47,7 @@
                                     <MFXTextField fx:id="tfNomeCompl" floatingText="Nome Completo" prefHeight="51.0" prefWidth="371.0"/>
                                     <HBox>
                                         <MFXDatePicker fx:id="dpData" promptText="Data Nascimento" prefHeight="24.0" prefWidth="287.0" />
-                                        <MFXTextField fx:id="tfNaturalidade" prefHeight="51.0" prefWidth="371.0" floatingText="Naturalidade" />
+                                        <MFXComboBox fx:id="cbNaturalidade" prefHeight="51.0" prefWidth="371.0" floatingText="Naturalidade" />
                                         <MFXComboBox fx:id="cbNaturalidadeUF" prefHeight="51.0" prefWidth="371.0" floatingText="Naturalidade UF" />
                                     </HBox>
                                     <HBox>
@@ -85,7 +85,7 @@
                                     <HBox>
                                         <MFXTextField fx:id="tfRgExp" prefHeight="51.0" prefWidth="371.0" floatingText="RG Data de Expedição" />
                                         <MFXComboBox fx:id="cbRgUF" prefHeight="51.0" prefWidth="371.0" floatingText="RG UF" />
-                                        <MFXComboBox fx:id="cbOrgao" prefHeight="51.0" prefWidth="371.0" floatingText="RG Órgão (Ex: SSP, IIPR ou PC)" />
+                                        <MFXTextField fx:id="cbOrgao" prefHeight="51.0" prefWidth="371.0" floatingText="RG Órgão (Ex: SSP, IIPR ou PC)" />
                                     </HBox>
                                     
 

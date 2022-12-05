@@ -5,6 +5,8 @@ public class Email {
     private int emailID;
     private String email;
     
+    public Email() {
+    }
     public Email(int emailID, String email) {
         this.emailID = emailID;
         this.email = email;

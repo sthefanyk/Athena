@@ -10,6 +10,9 @@ public class Endereco {
     private String complemeto;
     private Cidade cidade;
     
+    public Endereco() {
+    }
+
     public Endereco(int enderecoID, String cep, String logradouro, String bairro, String numero, String complemeto,
             Cidade cidade) {
         this.enderecoID = enderecoID;
